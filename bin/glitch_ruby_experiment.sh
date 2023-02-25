@@ -7,16 +7,16 @@ pushd /tmp
 echo "Extracting ruby-build package..."
 tar -xzf ruby-build.tar.gz
 echo "Installing ruby-build..."
-PREFIX=/usr/local ./ruby-build-*/install.sh
+PREFIX=$HOME/.local ./ruby-build-*/install.sh
 popd
 
 echo "Creating directory '/usr/local/rubies'..."
-mkdir /usr/local/rubies/ruby-3.0.5
+mkdir -p $HOME/.local/rubies/ruby-3.0.5
 echo "Installing Ruby v3.0.5 to '/usr/local/rubies/ruby-3.0.5'..."
-ruby-build 3.0.5 /usr/local/rubies/ruby-3.0.5
+ruby-build 3.0.5 $HOME/.local/rubies/ruby-3.0.5
 echo "Linking Ruby binaries..."
-ln -s /usr/local/rubies/ruby-3.0.5/bin/ruby /usr/local/bin/ruby
-ln -s /usr/local/rubies/ruby-3.0.5/bin/gem /usr/local/bin/gem
+ln -s $HOME/.local/rubies/ruby-3.0.5/bin/ruby $HOME/.local/bin/ruby
+ln -s $HOME/.local/rubies/ruby-3.0.5/bin/gem $HOME/.local/bin/gem
 
 echo "Updating RubyGems..."
 gem update --system
