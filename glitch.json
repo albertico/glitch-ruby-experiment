@@ -1,5 +1,5 @@
 {
-  "install": "bin/install.sh",
+  "install": "glitch_ruby_experiment.sh",
   "start": "bundle exec ruby app.rb",
   "watch": {
     "install": {
